@@ -1,1 +1,39 @@
-site_name: My Docs
+site_name: RealState Crawler
+
+nav:
+  - Início: index.md
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"  # Palette toggle for light mode
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+    
+    - media: "(prefers-color-scheme: dark)"  # Palette toggle for dark mode
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+  theme:
+    font:
+      text: Ubuntu
+      code: Ubuntu Mono
+  language: pt
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
