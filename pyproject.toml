@@ -9,6 +9,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "==3.12.3"
 requests = "^2.31.0"
+beautifulsoup4 = "^4.12.3"
+selenium = "^4.20.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -27,3 +29,9 @@ mkdocstrings-python = "^1.10.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+format = "ruff check . && isort ."
+test = "pytest tests/* -v"
+run = "python src/main.py"
+docs = "mkdocs serve"
